@@ -1,0 +1,374 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    scroll-behavior: smooth;
+    --clr-bg-head: #2E323F;
+    --clr-bg-hero: #3B4050;
+    --clr-bg-gray: #CCCCCC;
+    --clr-txt-primary: #000;
+    --clr-txt-secondary: #fff;
+    --clr-btn: #A59678;
+    --header-height: 60px;
+}
+
+/* helper classes */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section .container {
+    width: 95%;
+}
+
+footer .container {
+    width: 95%;
+}
+.flexcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexbetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.end {
+    align-items: flex-end;
+}
+.center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    color: var(--clr-txt-secondary);
+    padding: 0.3rem 0.8rem;
+    background-color: var(--clr-btn);
+    text-decoration: none;
+    border-radius: 100px;
+}
+
+/* Menu helper classes */
+.animLink::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--hvr-clr);
+    transition: width .3s ease-in;
+}
+
+.animLink:hover::after {
+    width: 100%;
+    transition: width .3s ease-out;
+}
+
+section {
+    padding: 1rem 0;
+}
+/* header */
+header {
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--clr-bg-head);
+    font-family: 'Oswald';
+    font-size: 18px;
+    color: var(--clr-txt-secondary);
+    text-transform: uppercase;
+    padding:0.2rem 0;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 55px;
+}
+
+header i {
+    font-family: 'Oswald';
+    font-size: 1.5rem;
+    color: var(--clr-txt-secondary);
+}
+
+header i:hover {
+    cursor: pointer;
+}
+
+header #menu__content.active {
+    top: var(--header-height);
+}
+
+header #menu__content ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.8rem, 2.5vmin, 1.1rem);
+}
+
+header #menu__content ul li {
+    list-style-type: none;
+}
+
+header #menu__content ul li a {
+    text-decoration: none;
+    color: var(--clr-txt-secondary);
+    font-weight: 400;
+    font-size: clamp(0.8rem, 2.5vmin, 1.1rem);
+}
+
+/* hero */
+
+#hero {
+    color: var(--clr-txt-secondary);
+    background-color: var(--clr-bg-hero);
+}
+
+#hero h1 {
+    font-family: 'Oswald';
+    line-height: 110%;
+    font-size: clamp(3rem, 7vw, 90px);
+}
+
+#hero p {
+    font-family: 'Montserrat';
+    font-size: clamp(1rem, 3vw, 24px);
+    padding: 1rem 0;
+}
+
+#hero h1 span {
+    color: var(--clr-btn);
+}
+
+#hero .btn {
+    margin-top: 1rem;
+    font-family: 'Oswald';
+    font-size: clamp(1rem, 3vw, 24px);
+    padding: 0.4rem 0.8rem;
+}
+
+/* about */
+#about {
+    background-color: var(--clr-bg-gray);
+    width: 100%;
+}
+
+.about-card h2 {
+    text-align: center;
+    color: var(--clr-btn);
+    font-family: 'Oswald';
+    padding-bottom: 1rem;
+    font-size: clamp(1.3rem, 3.5vw, 30px);
+}
+
+.about-card p {
+    color: var(--clr-txt-primary);
+    font-family: 'Montserrat';
+    font-size: clamp(0.9rem, 2.6vw, 18px);
+}
+
+/*  info */
+
+.left-container {
+    width: 100%;
+}
+
+.left-container h2 {
+    color: var(--clr-btn);
+    font-family: 'Oswald';
+    font-size: clamp(1.5rem, 4vw, 36px);
+    padding-bottom: 1rem;
+}
+
+.left-container p {
+    color: var(--clr-txt-primary);
+    font-size: clamp(1.1rem, 2.7vw, 21px);
+    font-family: 'Montserrat';
+}
+.left-container img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    object-position: top left;
+    padding-top: 1rem;
+}
+
+.right-container {
+    width: 100%;
+    text-align: center;
+    color: var(--clr-txt-secondary);
+}
+
+.info-card {
+    background-color: var(--clr-bg-hero);
+}
+
+.info-card h3 {
+    padding: 1rem 2rem;
+    font-family: 'Oswald';
+    font-size: clamp(1.3rem, 3.5vw, 30px);
+}
+
+.info-card p {
+    padding: 1rem 1rem 2rem 1rem;
+    font-family: 'Montserrat';
+    font-size: clamp(0.9rem, 2.6vw, 18px);
+}
+
+/* footer */
+
+footer {
+    background-color: var(--clr-bg-hero);
+    padding: 1rem;
+}
+footer h3 {
+    font-family: "Oswald";
+    font-size: clamp(1.3rem, 3vw, 24px);
+    text-align: center;
+    color: var(--clr-txt-secondary);
+}
+
+footer h4 {
+    font-family: "Oswald";
+    font-size: clamp(1rem, 2.5vw, 21px);
+    color: var(--clr-btn);
+    padding-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+}
+footer li {
+    padding-bottom: 1rem;
+}
+footer p, footer li {
+    font-family: 'Montserrat';
+    font-size: clamp(0.9rem, 2vw, 16px);
+    color: var(--clr-txt-secondary);
+}
+.footer-left {
+    width: 100%;
+}
+.footer-right {
+    width: 100%;
+}
+/* media queries */
+@media (max-width: 700px) {
+    header #menu__content {
+        background-color: var(--clr-bg-head);
+        padding: 1rem;
+        position: absolute;
+        top: -250px;
+        right: 20px;
+        transition: top 0.5s ease-out;
+    }
+    .footer-right {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 701px) {
+    #burger__menu {
+        display: none;
+    }
+
+    #menu__content {
+        background-color: transparent;
+        position: initial;
+    }
+
+    header #menu__content ul {
+        flex-direction: row;
+    }
+    
+    section .container  {
+        width: 80%;
+        padding: 2.5rem 0;
+    }
+    
+    footer .container {
+        width: 80%;
+    }
+    #hero .container div {
+        width: 45%;
+    }
+
+    .about-card {
+        width: 30%;
+    }
+    .about-card p {
+        text-align: center;
+    }
+
+    .info-card {
+        width: 31%;
+    }
+
+    .info-card p {
+        padding: 1rem 0.5rem 2rem 0.5rem;
+    }
+    .footer-left, .footer-right {
+        width: 40%;
+    }
+
+    footer .list {
+        width: 30%;
+    }
+    footer {
+        padding-top: 2.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        width: 80%;
+    }
+    #hero .container div {
+        width: 49%;
+    }
+
+    .left-container {
+        width: 60%;
+    }
+
+    .left-container img {
+        height: 500px;
+    }
+    .right-container {
+        width: 30%;
+    }
+    .info-card {
+        width: 100%;
+    }
+    footer .list {
+        width: 40%;
+    }
+
+    .footer-right {
+        justify-content: flex-end;
+    }
+}
